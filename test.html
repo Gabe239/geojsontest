@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Device Stand History Form</title>
+    <title>Test GET Request to Pipedream</title>
     <style>
-        input[type=text], input[type=email], textarea {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        input[type=submit] {
+        button {
             width: 100%;
             background-color: #409bd2;
             color: white;
@@ -19,45 +11,36 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
         }
-        input[type=submit]:hover {
+        button:hover {
             background-color: #007ac3;
         }
         div {
             border-radius: 5px;
             background-color: #f2f2f2;
             padding: 20px;
+            width: 50%;
+            margin: auto;
+            text-align: center;
         }
         h3 {
             font-family: Arial, sans-serif;
             color: #007ac3;	
             text-align: center;
         }
+        iframe {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
-    <h3>Device Stand History Form</h3>
+    <h3>Test Pipedream Webhook</h3>
 
     <div>
-        <form action="https://eoen5q3p5grql95.m.pipedream.net" method="get">
-            <label for="deviceid">Device ID:</label>
-            <input type="text" id="deviceid" name="deviceid" required><br><br>
-
-            <label for="user_email">User Email:</label>
-            <input type="email" id="user_email" name="user_email" required><br><br>
-
-            <label for="entityid">Entity ID:</label>
-            <input type="text" id="entityid" name="entityid" required><br><br>
-
-            <label for="observation">Observation:</label>
-            <textarea id="observation" name="observation" required></textarea><br><br>
-
-            <label for="responsible">Responsible:</label>
-            <input type="text" id="responsible" name="responsible" required><br><br>
-
-            <input type="submit" value="Submit">
-        </form>
+        <button onclick=""document.getElementById('hiddenFrame').src='https://eoqbfsyjpacr0lf.m.pipedream.net/'"">Send GET Request</button>
+        <iframe id='hiddenFrame'></iframe>
     </div>
 
 </body>
