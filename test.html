@@ -8,7 +8,7 @@
 <body>
 
     <h2>Test Pipedream Form (GET Request)</h2>
-    <form id="testForm">
+    <form action="https://eoqbfsyjpacr0lf.m.pipedream.net" method="get">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <br><br>
@@ -24,33 +24,8 @@
         <button type="submit">Send</button>
     </form>
 
-    <h3>Response:</h3>
-    <pre id="response"></pre>
-
-    <script>
-        document.getElementById("testForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            const name = encodeURIComponent(document.getElementById("name").value);
-            const email = encodeURIComponent(document.getElementById("email").value);
-            const message = encodeURIComponent(document.getElementById("message").value);
-
-            const url = `https://eoqbfsyjpacr0lf.m.pipedream.net?name=${name}&email=${email}&message=${message}`;
-
-            fetch(url, {
-                method: "GET"
-            })
-            .then(response => response.text())  // Assuming the endpoint returns text
-            .then(data => {
-                document.getElementById("response").innerText = data;
-            })
-            .catch(error => {
-                document.getElementById("response").innerText = "Error: " + error;
-            });
-        });
-    </script>
-
 </body>
 </html>
+
 
 
